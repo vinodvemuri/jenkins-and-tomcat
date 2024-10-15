@@ -1,0 +1,497 @@
+Jenkins using commans:
+
+Last login: Tue Oct 15 03:18:06 2024 from 18.206.107.28
+ubuntu@ip-172-31-80-202:~$ sudo su -
+root@ip-172-31-80-202:~# ll
+total 40
+drwx------  5 root root 4096 Oct 14 15:15 ./
+drwxr-xr-x 22 root root 4096 Oct 14 12:39 ../
+-rw-------  1 root root 1063 Oct 15 03:17 .bash_history
+-rw-r--r--  1 root root 3106 Apr 22 13:04 .bashrc
+-rw-------  1 root root   20 Oct 14 15:15 .lesshst
+-rw-r--r--  1 root root  161 Apr 22 13:04 .profile
+drwx------  2 root root 4096 Oct 14 12:39 .ssh/
+-rw-r--r--  1 root root  164 Oct 15 03:14 .wget-hsts
+drwx------  3 root root 4096 Oct 14 12:40 snap/
+drwxr-xr-x  2 root root 4096 Oct 14 12:58 src/
+root@ip-172-31-80-202:~# systemctl status jenkins
+● jenkins.service - Jenkins Continuous Integration Server
+     Loaded: loaded (/usr/lib/systemd/system/jenkins.service; enabled; preset: enabled)
+     Active: active (running) since Mon 2024-10-14 12:47:40 UTC; 14h ago
+   Main PID: 3975 (java)
+      Tasks: 45 (limit: 4676)
+     Memory: 861.2M (peak: 869.2M)
+        CPU: 2min 44.303s
+     CGroup: /system.slice/jenkins.service
+             └─3975 /usr/bin/java -Djava.awt.headless=true -jar /usr/share/java/jenkins.war --webroot=/var/cache/jenkins/war --htt>
+
+Oct 14 14:44:08 ip-172-31-80-202 jenkins[3975]: 2024-10-14 14:44:08.945+0000 [id=15]        WARNING        o.k.s.BytecodeReadingPa>
+Oct 14 14:44:09 ip-172-31-80-202 jenkins[3975]: 2024-10-14 14:44:09.001+0000 [id=15]        WARNING        o.k.s.BytecodeReadingPa>
+Oct 14 14:44:09 ip-172-31-80-202 jenkins[3975]: 2024-10-14 14:44:09.007+0000 [id=15]        WARNING        o.k.s.BytecodeReadingPa>
+Oct 14 14:44:09 ip-172-31-80-202 jenkins[3975]: 2024-10-14 14:44:09.011+0000 [id=15]        WARNING        o.k.s.BytecodeReadingPa>
+Oct 14 14:44:09 ip-172-31-80-202 jenkins[3975]: 2024-10-14 14:44:09.021+0000 [id=15]        WARNING        o.k.s.BytecodeReadingPa>
+Oct 14 14:44:09 ip-172-31-80-202 jenkins[3975]: 2024-10-14 14:44:09.024+0000 [id=15]        WARNING        o.k.s.BytecodeReadingPa>
+Oct 14 14:44:13 ip-172-31-80-202 jenkins[3975]: 2024-10-14 14:44:13.106+0000 [id=16]        WARNING        o.k.s.BytecodeReadingPa>
+Oct 14 14:44:13 ip-172-31-80-202 jenkins[3975]: 2024-10-14 14:44:13.285+0000 [id=12]        WARNING        o.k.s.BytecodeReadingPa>
+Oct 14 14:44:13 ip-172-31-80-202 jenkins[3975]: 2024-10-14 14:44:13.337+0000 [id=18]        WARNING        o.k.s.BytecodeReadingPa>
+
+root@ip-172-31-80-202:~# ll
+total 40
+drwx------  5 root root 4096 Oct 15 03:21 ./
+drwxr-xr-x 22 root root 4096 Oct 14 12:39 ../
+-rw-------  1 root root 1063 Oct 15 03:17 .bash_history
+-rw-r--r--  1 root root 3106 Apr 22 13:04 .bashrc
+-rw-------  1 root root   20 Oct 15 03:21 .lesshst
+-rw-r--r--  1 root root  161 Apr 22 13:04 .profile
+drwx------  2 root root 4096 Oct 14 12:39 .ssh/
+-rw-r--r--  1 root root  164 Oct 15 03:14 .wget-hsts
+drwx------  3 root root 4096 Oct 14 12:40 snap/
+drwxr-xr-x  2 root root 4096 Oct 14 12:58 src/
+root@ip-172-31-80-202:~# cd /
+root@ip-172-31-80-202:/# ll
+total 84
+drwxr-xr-x  22 root root  4096 Oct 14 12:39 ./
+drwxr-xr-x  22 root root  4096 Oct 14 12:39 ../
+lrwxrwxrwx   1 root root     7 Apr 22 13:08 bin -> usr/bin/
+drwxr-xr-x   2 root root  4096 Feb 26  2024 bin.usr-is-merged/
+drwxr-xr-x   5 root root  4096 Sep 27 08:41 boot/
+drwxr-xr-x  16 root root  3240 Oct 14 12:39 dev/
+drwxr-xr-x 114 root root  4096 Oct 14 12:47 etc/
+drwxr-xr-x   3 root root  4096 Oct 14 12:39 home/
+lrwxrwxrwx   1 root root     7 Apr 22 13:08 lib -> usr/lib/
+drwxr-xr-x   2 root root  4096 Apr  8  2024 lib.usr-is-merged/
+lrwxrwxrwx   1 root root     9 Apr 22 13:08 lib64 -> usr/lib64/
+drwx------   2 root root 16384 Sep 27 08:38 lost+found/
+drwxr-xr-x   2 root root  4096 Sep 27 08:36 media/
+drwxr-xr-x   2 root root  4096 Sep 27 08:36 mnt/
+drwxr-xr-x   2 root root  4096 Sep 27 08:36 opt/
+dr-xr-xr-x 181 root root     0 Oct 14 12:39 proc/
+drwx------   5 root root  4096 Oct 15 03:21 root/
+drwxr-xr-x  31 root root  1000 Oct 15 03:18 run/
+lrwxrwxrwx   1 root root     8 Apr 22 13:08 sbin -> usr/sbin/
+drwxr-xr-x   2 root root  4096 Mar 31  2024 sbin.usr-is-merged/
+drwxr-xr-x   6 root root  4096 Sep 27 08:40 snap/
+drwxr-xr-x   2 root root  4096 Sep 27 08:36 srv/
+dr-xr-xr-x  13 root root     0 Oct 14 12:59 sys/
+drwxrwxrwt  16 root root  4096 Oct 15 03:15 tmp/
+drwxr-xr-x  12 root root  4096 Sep 27 08:36 usr/
+drwxr-xr-x  13 root root  4096 Oct 14 12:39 var/
+root@ip-172-31-80-202:/# ~
+-bash: /root: Is a directory
+root@ip-172-31-80-202:/# cd ..
+root@ip-172-31-80-202:/# exit
+logout
+ubuntu@ip-172-31-80-202:~$ sudo su -
+root@ip-172-31-80-202:~# pwd
+/root
+root@ip-172-31-80-202:~# cd /
+root@ip-172-31-80-202:/# pwd
+/
+root@ip-172-31-80-202:/# cd
+root@ip-172-31-80-202:~# pwd
+/root
+root@ip-172-31-80-202:~# cd /
+root@ip-172-31-80-202:/# ll
+total 84
+drwxr-xr-x  22 root root  4096 Oct 14 12:39 ./
+drwxr-xr-x  22 root root  4096 Oct 14 12:39 ../
+lrwxrwxrwx   1 root root     7 Apr 22 13:08 bin -> usr/bin/
+drwxr-xr-x   2 root root  4096 Feb 26  2024 bin.usr-is-merged/
+drwxr-xr-x   5 root root  4096 Sep 27 08:41 boot/
+drwxr-xr-x  16 root root  3240 Oct 14 12:39 dev/
+drwxr-xr-x 114 root root  4096 Oct 14 12:47 etc/
+drwxr-xr-x   3 root root  4096 Oct 14 12:39 home/
+lrwxrwxrwx   1 root root     7 Apr 22 13:08 lib -> usr/lib/
+drwxr-xr-x   2 root root  4096 Apr  8  2024 lib.usr-is-merged/
+lrwxrwxrwx   1 root root     9 Apr 22 13:08 lib64 -> usr/lib64/
+drwx------   2 root root 16384 Sep 27 08:38 lost+found/
+drwxr-xr-x   2 root root  4096 Sep 27 08:36 media/
+drwxr-xr-x   2 root root  4096 Sep 27 08:36 mnt/
+drwxr-xr-x   2 root root  4096 Sep 27 08:36 opt/
+dr-xr-xr-x 180 root root     0 Oct 14 12:39 proc/
+drwx------   5 root root  4096 Oct 15 03:21 root/
+drwxr-xr-x  31 root root  1000 Oct 15 03:18 run/
+lrwxrwxrwx   1 root root     8 Apr 22 13:08 sbin -> usr/sbin/
+drwxr-xr-x   2 root root  4096 Mar 31  2024 sbin.usr-is-merged/
+drwxr-xr-x   6 root root  4096 Sep 27 08:40 snap/
+drwxr-xr-x   2 root root  4096 Sep 27 08:36 srv/
+dr-xr-xr-x  13 root root     0 Oct 14 12:59 sys/
+drwxrwxrwt  16 root root  4096 Oct 15 03:15 tmp/
+drwxr-xr-x  12 root root  4096 Sep 27 08:36 usr/
+drwxr-xr-x  13 root root  4096 Oct 14 12:39 var/
+root@ip-172-31-80-202:/# cd /var
+root@ip-172-31-80-202:/var# ll
+total 56
+drwxr-xr-x 13 root root   4096 Oct 14 12:39 ./
+drwxr-xr-x 22 root root   4096 Oct 14 12:39 ../
+-rw-r--r--  1 root root    208 Sep 27 08:36 .updated
+drwxr-xr-x  2 root root   4096 Oct 15 03:08 backups/
+drwxr-xr-x 17 root root   4096 Oct 14 13:17 cache/
+drwxrwsrwt  2 root root   4096 Sep 27 08:38 crash/
+drwxr-xr-x 48 root root   4096 Oct 14 13:17 lib/
+drwxrwsr-x  2 root staff  4096 Apr 22 13:08 local/
+lrwxrwxrwx  1 root root      9 Sep 27 08:36 lock -> /run/lock/
+drwxrwxr-x 12 root syslog 4096 Oct 14 12:47 log/
+drwxrwsr-x  2 root mail   4096 Sep 27 08:36 mail/
+drwxr-xr-x  2 root root   4096 Sep 27 08:36 opt/
+lrwxrwxrwx  1 root root      4 Sep 27 08:36 run -> /run/
+drwxr-xr-x  5 root root   4096 Sep 27 08:40 snap/
+drwxr-xr-x  4 root root   4096 Sep 27 08:36 spool/
+drwxrwxrwt  9 root root   4096 Oct 15 03:15 tmp/
+root@ip-172-31-80-202:/var# cd /lib
+root@ip-172-31-80-202:/lib# ll
+total 940
+drwxr-xr-x 82 root root   4096 Oct 14 12:44 ./
+drwxr-xr-x 12 root root   4096 Sep 27 08:36 ../
+drwxr-xr-x  3 root root   4096 Sep 27 08:41 NetworkManager/
+drwxr-xr-x  2 root root   4096 Apr  8  2024 X11/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 apparmor/
+drwxr-xr-x  5 root root   4096 Sep 27 08:36 apt/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 binfmt.d/
+drwxr-xr-x  3 root root   4096 Sep 27 08:37 byobu/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 cloud-init/
+-rwxr-xr-x  1 root root   1075 Jan 20  2023 cnf-update-db*
+-rwxr-xr-x  1 root root   3565 Jan 20  2023 command-not-found*
+drwxr-xr-x  2 root root   4096 Sep 27 08:36 console-setup/
+drwxr-xr-x  4 root root   4096 Sep 27 08:37 cryptsetup/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 dbus-1.0/
+drwxr-xr-x  3 root root   4096 Oct 14 12:44 debug/
+drwxr-xr-x  3 root root   4096 Sep 27 08:37 dhcpcd/
+drwxr-xr-x  3 root root   4096 Sep 27 08:36 dpkg/
+drwxr-xr-x  3 root root   4096 Sep 27 08:37 dracut/
+drwxr-xr-x  2 root root   4096 Sep 27 08:41 ec2-hibinit-agent/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 environment.d/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 file/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 finalrd/
+drwxr-xr-x  5 root root   4096 Oct 14 12:43 firmware/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 girepository-1.0/
+drwxr-xr-x  3 root root   4096 Sep 27 08:37 git-core/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 gnupg/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 gnupg2/
+drwxr-xr-x  3 root root   4096 Sep 27 08:37 groff/
+drwxr-xr-x  5 root root   4096 Sep 27 08:39 grub/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 grub-legacy/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 hdparm/
+drwxr-xr-x  2 root root   4096 Sep 27 08:36 init/
+drwxr-xr-x  3 root root   4096 Sep 27 08:37 initcpio/
+drwxr-xr-x  3 root root   4096 Sep 27 08:37 initramfs-tools/
+drwxr-xr-x  3 root root   4096 Oct 14 12:44 jvm/
+drwxr-xr-x  3 root root   4096 Sep 27 08:37 kernel/
+drwxr-xr-x  3 root root   4096 Sep 27 08:37 klibc/
+-rwxr-xr-x  1 root root  78784 May 21 08:39 klibc-sw0VayLfV0hmLGCQE9vyfOnj81g.so*
+-rw-r--r--  1 root root  14568 Apr  7  2024 libmpathcmd.so.0
+-rw-r--r--  1 root root  39144 Apr  7  2024 libmpathpersist.so.0
+-rw-r--r--  1 root root  47344 Apr  7  2024 libmpathutil.so.0
+-rw-r--r--  1 root root 394816 Apr  7  2024 libmultipath.so.0
+drwxr-xr-x  3 root root   4096 Sep 27 08:41 linux/
+drwxr-xr-x  2 root root   4096 Sep 27 08:41 linux-aws-tools-6.8.0-1016/
+drwxr-xr-x  3 root root   4096 Sep 27 08:37 linux-boot-probes/
+drwxr-xr-x  3 root root   4096 Sep 27 08:41 linux-tools/
+drwxr-xr-x  3 root root   4096 Sep 27 08:37 llvm-18/
+drwxr-xr-x  3 root root   4096 Sep 27 08:38 locale/
+drwxr-xr-x  3 root root   4096 Sep 27 08:36 lsb/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 man-db/
+drwxr-xr-x  3 root root   4096 Feb  4  2024 mime/
+drwxr-xr-x  2 root root   4096 Sep 27 08:41 modprobe.d/
+drwxr-xr-x  3 root root   4096 Sep 27 08:41 modules/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 modules-load.d/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 multipath/
+drwxr-xr-x  3 root root   4096 Sep 27 08:37 nagios/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 needrestart/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 netplan/
+drwxr-xr-x  8 root root   4096 Sep 27 08:36 networkd-dispatcher/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 open-iscsi/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 openssh/
+drwxr-xr-x  4 root root   4096 Sep 27 08:37 os-probes/
+-rw-r--r--  1 root root    400 Aug 23 14:20 os-release
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 pam.d/
+drwxr-xr-x  5 root root   4096 Sep 27 08:37 pcrlock.d/
+drwxr-xr-x  4 root root   4096 Sep 27 08:37 pm-utils/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 policykit-1/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 polkit-1/
+drwxr-xr-x  3 root root   4096 Sep 27 08:36 python3/
+drwxr-xr-x 33 root root   4096 Sep 27 08:37 python3.12/
+drwxr-xr-x  3 root root   4096 Sep 27 08:37 recovery-mode/
+drwxr-xr-x  2 root root   4096 Sep 27 08:36 rsyslog/
+drwxr-xr-x  2 root root   4096 Aug  9 02:33 sasl2/
+lrwxrwxrwx  1 root root     19 Aug  9 02:33 sftp-server -> openssh/sftp-server*
+drwxr-xr-x  3 root root   4096 Sep 27 08:39 shim/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 snapd/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 software-properties/
+drwxr-xr-x  3 root root   4096 Sep 27 08:37 ssl/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 sysctl.d/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 sysstat/
+drwxr-xr-x 20 root root   4096 Sep 27 08:41 systemd/
+drwxr-xr-x  2 root root   4096 Sep 27 08:41 sysusers.d/
+drwxr-xr-x  2 root root   4096 Oct 14 12:47 tmpfiles.d/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 ubuntu-advantage/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 ubuntu-release-upgrader/
+drwxr-xr-x  4 root root   4096 Sep 27 08:37 udev/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 udisks2/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 ufw/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 update-notifier/
+drwxr-xr-x  2 root root   4096 Sep 27 08:37 valgrind/
+drwxr-xr-x 37 root root  32768 Oct 14 12:44 x86_64-linux-gnu/
+root@ip-172-31-80-202:/lib# cd jenkins
+-bash: cd: jenkins: No such file or directory
+root@ip-172-31-80-202:/lib# cd ..
+root@ip-172-31-80-202:/# cd ..
+root@ip-172-31-80-202:/# cd
+root@ip-172-31-80-202:~# cd /var/lib/jenkins
+root@ip-172-31-80-202:/var/lib/jenkins# ll
+total 104
+drwxr-xr-x 12 jenkins jenkins  4096 Oct 14 14:44 ./
+drwxr-xr-x 48 root    root     4096 Oct 14 13:17 ../
+drwxr-xr-x  4 jenkins jenkins  4096 Oct 14 12:47 .cache/
+drwxr-xr-x  3 jenkins jenkins  4096 Oct 14 13:20 .groovy/
+drwxr-xr-x  3 jenkins jenkins  4096 Oct 14 12:47 .java/
+-rw-r--r--  1 jenkins jenkins     0 Oct 14 12:47 .lastStarted
+-rw-r--r--  1 jenkins jenkins     4 Oct 15 03:24 .owner
+-rw-r--r--  1 jenkins jenkins  1660 Oct 14 12:47 config.xml
+-rw-r--r--  1 jenkins jenkins   156 Oct 14 12:47 hudson.model.UpdateCenter.xml
+-rw-r--r--  1 jenkins jenkins  1223 Oct 14 14:44 hudson.plugins.emailext.ExtendedEmailPublisher.xml
+-rw-r--r--  1 jenkins jenkins   370 Oct 14 13:20 hudson.plugins.git.GitTool.xml
+-rw-------  1 jenkins jenkins  1680 Oct 14 13:20 identity.key.enc
+-rw-r--r--  1 jenkins jenkins     7 Oct 14 13:20 jenkins.install.InstallUtil.lastExecVersion
+-rw-r--r--  1 jenkins jenkins     7 Oct 14 13:20 jenkins.install.UpgradeWizard.state
+-rw-r--r--  1 jenkins jenkins   183 Oct 14 13:20 jenkins.model.JenkinsLocationConfiguration.xml
+-rw-r--r--  1 jenkins jenkins   171 Oct 14 12:47 jenkins.telemetry.Correlator.xml
+drwxr-xr-x  2 jenkins jenkins  4096 Oct 14 12:47 jobs/
+drwxr-xr-x  2 jenkins jenkins  4096 Oct 14 13:20 logs/
+-rw-r--r--  1 jenkins jenkins  1037 Oct 14 12:47 nodeMonitors.xml
+drwxr-xr-x 90 jenkins jenkins 12288 Oct 14 13:19 plugins/
+-rw-r--r--  1 jenkins jenkins    64 Oct 14 12:47 secret.key
+-rw-r--r--  1 jenkins jenkins     0 Oct 14 12:47 secret.key.not-so-secret
+drwx------  2 jenkins jenkins  4096 Oct 14 13:20 secrets/
+drwxr-xr-x  2 jenkins jenkins  4096 Oct 14 13:20 updates/
+drwxr-xr-x  2 jenkins jenkins  4096 Oct 14 12:47 userContent/
+drwxr-xr-x  3 jenkins jenkins  4096 Oct 14 13:20 users/
+root@ip-172-31-80-202:/var/lib/jenkins# cd secrets/
+root@ip-172-31-80-202:/var/lib/jenkins/secrets# ll
+total 20
+drwx------  2 jenkins jenkins 4096 Oct 14 13:20 ./
+drwxr-xr-x 12 jenkins jenkins 4096 Oct 14 14:44 ../
+-rw-r--r--  1 jenkins jenkins   32 Oct 14 12:47 jenkins.model.Jenkins.crumbSalt
+-rw-r--r--  1 jenkins jenkins  256 Oct 14 12:47 master.key
+-rw-r--r--  1 jenkins jenkins  272 Oct 14 13:20 org.jenkinsci.main.modules.instance_identity.InstanceIdentity.KEY
+root@ip-172-31-80-202:/var/lib/jenkins/secrets# ll
+total 20
+drwx------  2 jenkins jenkins 4096 Oct 14 13:20 ./
+drwxr-xr-x 12 jenkins jenkins 4096 Oct 14 14:44 ../
+-rw-r--r--  1 jenkins jenkins   32 Oct 14 12:47 jenkins.model.Jenkins.crumbSalt
+-rw-r--r--  1 jenkins jenkins  256 Oct 14 12:47 master.key
+-rw-r--r--  1 jenkins jenkins  272 Oct 14 13:20 org.jenkinsci.main.modules.instance_identity.InstanceIdentity.KEY
+root@ip-172-31-80-202:/var/lib/jenkins/secrets# ll
+total 20
+drwx------  2 jenkins jenkins 4096 Oct 14 13:20 ./
+drwxr-xr-x 12 jenkins jenkins 4096 Oct 14 14:44 ../
+-rw-r--r--  1 jenkins jenkins   32 Oct 14 12:47 jenkins.model.Jenkins.crumbSalt
+-rw-r--r--  1 jenkins jenkins  256 Oct 14 12:47 master.key
+-rw-r--r--  1 jenkins jenkins  272 Oct 14 13:20 org.jenkinsci.main.modules.instance_identity.InstanceIdentity.KEY
+root@ip-172-31-80-202:/var/lib/jenkins/secrets# cd
+root@ip-172-31-80-202:~# maven install -y
+Command 'maven' not found, did you mean:
+  command 'aven' from deb survex-aven (1.4.4-1build1)
+Try: apt install <deb name>
+root@ip-172-31-80-202:~# apt install maven -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  libaopalliance-java libapache-pom-java libatinject-jsr330-api-java libcdi-api-java libcommons-cli-java libcommons-io-java
+  libcommons-lang3-java libcommons-parent-java liberror-prone-java libgeronimo-annotation-1.3-spec-java
+  libgeronimo-interceptor-3.0-spec-java libguava-java libguice-java libjansi-java libjsr305-java libmaven-parent-java
+  libmaven-resolver-java libmaven-shared-utils-java libmaven3-core-java libplexus-cipher-java libplexus-classworlds-java
+  libplexus-component-annotations-java libplexus-interpolation-java libplexus-sec-dispatcher-java libplexus-utils2-java
+  libsisu-inject-java libsisu-plexus-java libslf4j-java libwagon-file-java libwagon-http-shaded-java libwagon-provider-api-java
+Suggested packages:
+  libatinject-jsr330-api-java-doc libel-api-java libcommons-io-java-doc libasm-java libcglib-java libjsr305-java-doc
+  libmaven-shared-utils-java-doc liblogback-java libplexus-utils2-java-doc junit4 testng libcommons-logging-java liblog4j1.2-java
+The following NEW packages will be installed:
+  libaopalliance-java libapache-pom-java libatinject-jsr330-api-java libcdi-api-java libcommons-cli-java libcommons-io-java
+  libcommons-lang3-java libcommons-parent-java liberror-prone-java libgeronimo-annotation-1.3-spec-java
+  libgeronimo-interceptor-3.0-spec-java libguava-java libguice-java libjansi-java libjsr305-java libmaven-parent-java
+  libmaven-resolver-java libmaven-shared-utils-java libmaven3-core-java libplexus-cipher-java libplexus-classworlds-java
+  libplexus-component-annotations-java libplexus-interpolation-java libplexus-sec-dispatcher-java libplexus-utils2-java
+  libsisu-inject-java libsisu-plexus-java libslf4j-java libwagon-file-java libwagon-http-shaded-java libwagon-provider-api-java
+  maven
+0 upgraded, 32 newly installed, 0 to remove and 7 not upgraded.
+Need to get 10.1 MB of archives.
+After this operation, 13.1 MB of additional disk space will be used.
+Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libapache-pom-java all 29-2 [5284 B]
+Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libatinject-jsr330-api-java all 1.0+ds1-5 [5348 B]
+Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libgeronimo-interceptor-3.0-spec-java all 1.0.1-4fakesync [8616 B]
+Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libcdi-api-java all 1.2-3 [54.3 kB]
+Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libcommons-cli-java all 1.6.0-1 [59.9 kB]
+Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libcommons-parent-java all 56-1 [10.7 kB]
+Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libcommons-io-java all 2.11.0-2 [297 kB]
+Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libcommons-lang3-java all 3.14.0-1 [586 kB]
+Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libjsr305-java all 0.1~+svn49-11 [27.0 kB]
+Get:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libguava-java all 32.0.1-1 [2692 kB]
+Get:11 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 liberror-prone-java all 2.18.0-1 [22.5 kB]
+Get:12 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libgeronimo-annotation-1.3-spec-java all 1.3-1 [11.2 kB]
+Get:13 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libaopalliance-java all 20070526-7 [8166 B]
+Get:14 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libguice-java all 4.2.3-2 [1434 kB]
+Get:15 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libjansi-java all 2.4.1-2 [83.0 kB]
+Get:16 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libmaven-parent-java all 35-1 [5810 B]
+Get:17 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libplexus-utils2-java all 3.4.2-1 [256 kB]
+Get:18 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libwagon-provider-api-java all 3.5.3-1 [47.9 kB]
+Get:19 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libmaven-resolver-java all 1.6.3-1 [544 kB]
+Get:20 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libmaven-shared-utils-java all 3.3.4-1 [137 kB]
+Get:21 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libplexus-cipher-java all 2.0-1 [14.7 kB]
+Get:22 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libplexus-classworlds-java all 2.7.0-1 [50.0 kB]
+Get:23 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libplexus-component-annotations-java all 2.1.1-1 [6550 B]
+Get:24 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libplexus-interpolation-java all 1.26-1 [76.8 kB]
+Get:25 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libplexus-sec-dispatcher-java all 2.0-3 [28.1 kB]
+Get:26 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libslf4j-java all 1.7.32-1 [141 kB]
+Get:27 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libsisu-inject-java all 0.3.4-2 [347 kB]
+Get:28 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libsisu-plexus-java all 0.3.4-3 [181 kB]
+Get:29 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libmaven3-core-java all 3.8.7-2 [1565 kB]
+Get:30 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libwagon-file-java all 3.5.3-1 [7918 B]
+Get:31 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 libwagon-http-shaded-java all 3.5.3-1 [1332 kB]
+Get:32 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 maven all 3.8.7-2 [18.3 kB]
+Fetched 10.1 MB in 0s (39.1 MB/s)                    
+Extracting templates from packages: 100%
+Selecting previously unselected package libapache-pom-java.
+(Reading database ... 69753 files and directories currently installed.)
+Preparing to unpack .../00-libapache-pom-java_29-2_all.deb ...
+Unpacking libapache-pom-java (29-2) ...
+Selecting previously unselected package libatinject-jsr330-api-java.
+Preparing to unpack .../01-libatinject-jsr330-api-java_1.0+ds1-5_all.deb ...
+Unpacking libatinject-jsr330-api-java (1.0+ds1-5) ...
+Selecting previously unselected package libgeronimo-interceptor-3.0-spec-java.
+Preparing to unpack .../02-libgeronimo-interceptor-3.0-spec-java_1.0.1-4fakesync_all.deb ...
+Unpacking libgeronimo-interceptor-3.0-spec-java (1.0.1-4fakesync) ...
+Selecting previously unselected package libcdi-api-java.
+Preparing to unpack .../03-libcdi-api-java_1.2-3_all.deb ...
+Unpacking libcdi-api-java (1.2-3) ...
+Selecting previously unselected package libcommons-cli-java.
+Preparing to unpack .../04-libcommons-cli-java_1.6.0-1_all.deb ...
+Unpacking libcommons-cli-java (1.6.0-1) ...
+Selecting previously unselected package libcommons-parent-java.
+Preparing to unpack .../05-libcommons-parent-java_56-1_all.deb ...
+Unpacking libcommons-parent-java (56-1) ...
+Selecting previously unselected package libcommons-io-java.
+Preparing to unpack .../06-libcommons-io-java_2.11.0-2_all.deb ...
+Unpacking libcommons-io-java (2.11.0-2) ...
+Selecting previously unselected package libcommons-lang3-java.
+Preparing to unpack .../07-libcommons-lang3-java_3.14.0-1_all.deb ...
+Unpacking libcommons-lang3-java (3.14.0-1) ...
+Selecting previously unselected package libjsr305-java.
+Preparing to unpack .../08-libjsr305-java_0.1~+svn49-11_all.deb ...
+Unpacking libjsr305-java (0.1~+svn49-11) ...
+Selecting previously unselected package libguava-java.
+Preparing to unpack .../09-libguava-java_32.0.1-1_all.deb ...
+Unpacking libguava-java (32.0.1-1) ...
+Selecting previously unselected package liberror-prone-java.
+Preparing to unpack .../10-liberror-prone-java_2.18.0-1_all.deb ...
+Unpacking liberror-prone-java (2.18.0-1) ...
+Selecting previously unselected package libgeronimo-annotation-1.3-spec-java.
+Preparing to unpack .../11-libgeronimo-annotation-1.3-spec-java_1.3-1_all.deb ...
+Unpacking libgeronimo-annotation-1.3-spec-java (1.3-1) ...
+Selecting previously unselected package libaopalliance-java.
+Preparing to unpack .../12-libaopalliance-java_20070526-7_all.deb ...
+Unpacking libaopalliance-java (20070526-7) ...
+Selecting previously unselected package libguice-java.
+Preparing to unpack .../13-libguice-java_4.2.3-2_all.deb ...
+Unpacking libguice-java (4.2.3-2) ...
+Selecting previously unselected package libjansi-java.
+Preparing to unpack .../14-libjansi-java_2.4.1-2_all.deb ...
+Unpacking libjansi-java (2.4.1-2) ...
+Selecting previously unselected package libmaven-parent-java.
+Preparing to unpack .../15-libmaven-parent-java_35-1_all.deb ...
+Unpacking libmaven-parent-java (35-1) ...
+Selecting previously unselected package libplexus-utils2-java.
+Preparing to unpack .../16-libplexus-utils2-java_3.4.2-1_all.deb ...
+Unpacking libplexus-utils2-java (3.4.2-1) ...
+Selecting previously unselected package libwagon-provider-api-java.
+Preparing to unpack .../17-libwagon-provider-api-java_3.5.3-1_all.deb ...
+Unpacking libwagon-provider-api-java (3.5.3-1) ...
+Selecting previously unselected package libmaven-resolver-java.
+Preparing to unpack .../18-libmaven-resolver-java_1.6.3-1_all.deb ...
+Unpacking libmaven-resolver-java (1.6.3-1) ...
+Selecting previously unselected package libmaven-shared-utils-java.
+Preparing to unpack .../19-libmaven-shared-utils-java_3.3.4-1_all.deb ...
+Unpacking libmaven-shared-utils-java (3.3.4-1) ...
+Selecting previously unselected package libplexus-cipher-java.
+Preparing to unpack .../20-libplexus-cipher-java_2.0-1_all.deb ...
+Unpacking libplexus-cipher-java (2.0-1) ...
+Selecting previously unselected package libplexus-classworlds-java.
+Preparing to unpack .../21-libplexus-classworlds-java_2.7.0-1_all.deb ...
+Unpacking libplexus-classworlds-java (2.7.0-1) ...
+Selecting previously unselected package libplexus-component-annotations-java.
+Preparing to unpack .../22-libplexus-component-annotations-java_2.1.1-1_all.deb ...
+Unpacking libplexus-component-annotations-java (2.1.1-1) ...
+Selecting previously unselected package libplexus-interpolation-java.
+Preparing to unpack .../23-libplexus-interpolation-java_1.26-1_all.deb ...
+Unpacking libplexus-interpolation-java (1.26-1) ...
+Selecting previously unselected package libplexus-sec-dispatcher-java.
+Preparing to unpack .../24-libplexus-sec-dispatcher-java_2.0-3_all.deb ...
+Unpacking libplexus-sec-dispatcher-java (2.0-3) ...
+Selecting previously unselected package libslf4j-java.
+Preparing to unpack .../25-libslf4j-java_1.7.32-1_all.deb ...
+Unpacking libslf4j-java (1.7.32-1) ...
+Selecting previously unselected package libsisu-inject-java.
+Preparing to unpack .../26-libsisu-inject-java_0.3.4-2_all.deb ...
+Unpacking libsisu-inject-java (0.3.4-2) ...
+Selecting previously unselected package libsisu-plexus-java.
+Preparing to unpack .../27-libsisu-plexus-java_0.3.4-3_all.deb ...
+Unpacking libsisu-plexus-java (0.3.4-3) ...
+Selecting previously unselected package libmaven3-core-java.
+Preparing to unpack .../28-libmaven3-core-java_3.8.7-2_all.deb ...
+Unpacking libmaven3-core-java (3.8.7-2) ...
+Selecting previously unselected package libwagon-file-java.
+Preparing to unpack .../29-libwagon-file-java_3.5.3-1_all.deb ...
+Unpacking libwagon-file-java (3.5.3-1) ...
+Selecting previously unselected package libwagon-http-shaded-java.
+Preparing to unpack .../30-libwagon-http-shaded-java_3.5.3-1_all.deb ...
+Unpacking libwagon-http-shaded-java (3.5.3-1) ...
+Selecting previously unselected package maven.
+Preparing to unpack .../31-maven_3.8.7-2_all.deb ...
+Unpacking maven (3.8.7-2) ...
+Setting up libslf4j-java (1.7.32-1) ...
+Setting up libplexus-utils2-java (3.4.2-1) ...
+Setting up libplexus-classworlds-java (2.7.0-1) ...
+Setting up libjsr305-java (0.1~+svn49-11) ...
+Setting up libaopalliance-java (20070526-7) ...
+Setting up libcommons-cli-java (1.6.0-1) ...
+Setting up libplexus-component-annotations-java (2.1.1-1) ...
+Setting up libgeronimo-annotation-1.3-spec-java (1.3-1) ...
+Setting up libgeronimo-interceptor-3.0-spec-java (1.0.1-4fakesync) ...
+Setting up libjansi-java (2.4.1-2) ...
+Setting up libapache-pom-java (29-2) ...
+Setting up libatinject-jsr330-api-java (1.0+ds1-5) ...
+Setting up libplexus-interpolation-java (1.26-1) ...
+Setting up libwagon-http-shaded-java (3.5.3-1) ...
+Setting up libcdi-api-java (1.2-3) ...
+Setting up libwagon-provider-api-java (3.5.3-1) ...
+Setting up libmaven-parent-java (35-1) ...
+Setting up libcommons-parent-java (56-1) ...
+Setting up libsisu-inject-java (0.3.4-2) ...
+Setting up libplexus-cipher-java (2.0-1) ...
+Setting up libsisu-plexus-java (0.3.4-3) ...
+Setting up libcommons-lang3-java (3.14.0-1) ...
+Setting up libplexus-sec-dispatcher-java (2.0-3) ...
+Setting up libwagon-file-java (3.5.3-1) ...
+Setting up libcommons-io-java (2.11.0-2) ...
+Setting up libmaven-resolver-java (1.6.3-1) ...
+Setting up libmaven-shared-utils-java (3.3.4-1) ...
+Setting up libguava-java (32.0.1-1) ...
+Setting up liberror-prone-java (2.18.0-1) ...
+Setting up libguice-java (4.2.3-2) ...
+Setting up libmaven3-core-java (3.8.7-2) ...
+Setting up maven (3.8.7-2) ...
+update-alternatives: using /usr/share/maven/bin/mvn to provide /usr/bin/mvn (mvn) in auto mode
+Scanning processes... [                                                                                                           Scanning processes... [                                                                                                           Scanning processes... [=                                                                                                          Scanning processes... [==                                                                                                         Scanning processes... [===                                                                                                        Scanning processes... [====                                                                                                       Scanning processes... [=====                                                                                                      Scanning processes... [======                                                                                                     Scanning processes... [=======                                                                                                    Scanning processes... [========                                                                                                   Scanning processes... [========                                                                                                   Scanning processes... [=========                                                                                                  Scanning processes... [==========                                                                                                 Scanning processes... [===========                                                                                                Scanning processes... [============                                                                                               Scanning processes... [=============                                                                                              Scanning processes... [==============                                                                                             Scanning processes... [===============                                                                                            Scanning processes... [================                                                                                           Scanning processes... [================                                                                                           Scanning processes... [=================                                                                                          Scanning processes... [==================                                                                                         Scanning processes... [===================                                                                                        Scanning processes... [====================                                                                                       Scanning processes... [=====================                                                                                      Scanning processes... [======================                                                                                     Scanning processes... [=======================                                                                                    Scanning processes... [========================                                                                                   Scanning processes... [========================                                                                                   Scanning processes... [=========================                                                                                  Scanning processes... [==========================                                                                                 Scanning processes... [===========================                                                                                Scanning processes... [============================                                                                               Scanning processes... [=============================                                                                              Scanning processes... [==============================                                                                             Scanning processes... [===============================                                                                            Scanning processes... [================================                                                                           Scanning processes... [================================                                                                           Scanning processes... [=================================                                                                          Scanning processes... [==================================                                                                         Scanning processes... [===================================                                                                        Scanning processes... [====================================                                                                       Scanning processes... [=====================================                                                                      Scanning processes... [======================================                                                                     Scanning processes... [=======================================                                                                    Scanning processes... [========================================                                                                   Scanning processes... [=========================================                                                                  Scanning processes... [=========================================                                                                  Scanning processes... [==========================================                                                                 Scanning processes... [===========================================                                                                Scanning processes... [============================================                                                               Scanning processes... [=============================================                                                              Scanning processes... [==============================================                                                             Scanning processes... [===============================================                                                            Scanning processes... [================================================                                                           Scanning processes... [=================================================                                                          Scanning processes... [=================================================                                                          Scanning processes... [==================================================                                                         Scanning processes... [===================================================                                                        Scanning processes... [====================================================                                                       Scanning processes... [=====================================================                                                      Scanning processes... [======================================================                                                     Scanning processes... [=======================================================                                                    Scanning processes... [========================================================                                                   Scanning processes... [=========================================================                                                  Scanning processes... [=========================================================                                                  Scanning processes... [==========================================================                                                 Scanning processes... [===========================================================                                                Scanning processes... [============================================================                                               Scanning processes... [=============================================================                                              Scanning processes... [==============================================================                                             Scanning processes... [===============================================================                                            Scanning processes... [================================================================                                           Scanning processes... [=================================================================                                          Scanning processes... [=================================================================                                          Scanning processes... [==================================================================                                         Scanning processes... [===================================================================                                        Scanning processes... [====================================================================                                       Scanning processes... [=====================================================================                                      Scanning processes... [======================================================================                                     Scanning processes... [=======================================================================                                    Scanning processes... [========================================================================                                   Scanning processes... [=========================================================================                                  Scanning processes... [==========================================================================                                 Scanning processes... [==========================================================================                                 Scanning processes... [===========================================================================                                Scanning processes... [============================================================================                               Scanning processes... [=============================================================================                              Scanning processes... [==============================================================================                             Scanning processes... [===============================================================================                            Scanning processes... [================================================================================                           Scanning processes... [=================================================================================                          Scanning processes... [==================================================================================                         Scanning processes... [==================================================================================                         Scanning processes... [===================================================================================                        Scanning processes... [====================================================================================                       Scanning processes... [=====================================================================================                      Scanning processes... [======================================================================================                     Scanning processes... [=======================================================================================                    Scanning processes... [========================================================================================                   Scanning processes... [=========================================================================================                  Scanning processes... [==========================================================================================                 Scanning processes... [==========================================================================================                 Scanning processes... [===========================================================================================                Scanning processes... [============================================================================================               Scanning processes... [=============================================================================================              Scanning processes... [==============================================================================================             Scanning processes... [===============================================================================================            Scanning processes... [================================================================================================           Scanning processes... [=================================================================================================          Scanning processes... [==================================================================================================         Scanning processes... [==================================================================================================         Scanning processes... [===================================================================================================        Scanning processes... [====================================================================================================       Scanning processes... [=====================================================================================================      Scanning processes... [======================================================================================================     Scanning processes... [=======================================================================================================    Scanning processes... [========================================================================================================   Scanning processes... [=========================================================================================================  Scanning processes... [========================================================================================================== Scanning processes... [===========================================================================================================Scanning processes...                                                                                                              
+Scanning linux images... [                                                                                                        Scanning linux images... [==================================                                                                      Scanning linux images... [=====================================================================                                   Scanning linux images... [========================================================================================================Scanning linux images...                                                                                                           
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+root@ip-172-31-80-202:~# 
